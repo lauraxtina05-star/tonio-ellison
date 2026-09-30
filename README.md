@@ -28,7 +28,7 @@ Repository: https://github.com/lauraxtina05-star/tonio-ellison
 
 ## Hero motion
 
-Desktop/tablet: portrait scales by at most 3.5% and moves 18px; headline moves up at most 24px; dark hero narrows by at most 1.4% as the ivory section enters normal document flow. No sticky or pinned scroll. Only one queued frame per scroll; scroll listeners detach when the hero is offscreen.
+Desktop/tablet: portrait scales by at most 3.5% and moves 18px; headline moves up at most 24px; dark hero scales down proportionally by at most 1.4% as the ivory section enters normal document flow. No sticky or pinned scroll. Only one queued frame per scroll; scroll listeners detach when the hero is offscreen.
 
 At 700px and below: no portrait or section transformation, only up to 6px of text translation and 6% fade. Reduced-motion disables all scroll transforms, section reveals, hover transforms and smooth scrolling, including when the preference changes during a visit. Three chosen text blocks reveal on entry; content remains visible without JavaScript.
 

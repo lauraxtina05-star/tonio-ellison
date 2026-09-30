@@ -69,7 +69,7 @@ figure { margin: 0; }
 /* Scroll values are bounded by motion.js; there is never a continuous animation loop. */
 .hero.is-motion-active .hero-image img { transform: translateY(var(--portrait-y, 0px)) scale(var(--portrait-scale, 1)); }
 .hero.is-motion-active h1 { transform: translateY(var(--headline-y, 0px)); }
-.hero.is-motion-active .hero-surface { transform: scaleX(var(--hero-scale, 1)); }
+.hero.is-motion-active .hero-surface { transform: scale(var(--hero-scale, 1)); }
 .statement { background: var(--ivory); position: relative; }
 .statement > .eyebrow { color: #696253; }
 .statement h2 { max-width: 1110px; font-size: clamp(2.3rem, 4.5vw, 4.5rem); line-height: 1.2; letter-spacing: -.04em; }
