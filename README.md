@@ -1,6 +1,6 @@
 # Antonio “Tonio” Ellison, MS, CLC
 
-Photography-led editorial website with near-black, warm ivory and soft-white sections. Plain HTML, CSS and JavaScript; no runtime dependencies or animation libraries.
+Photography-led personal website with a continuous black/charcoal narrative and two restrained ivory breaks. Plain HTML, CSS and JavaScript; no runtime dependencies or animation libraries.
 
 Live site: https://tonio-ellison.aellison2920.workers.dev/
 Repository: https://github.com/lauraxtina05-star/tonio-ellison
@@ -28,9 +28,9 @@ Repository: https://github.com/lauraxtina05-star/tonio-ellison
 
 ## Hero motion
 
-Desktop/tablet: portrait scales by at most 3.5% and moves 18px; headline moves up at most 24px; dark hero scales down proportionally by at most 1.4% as the ivory section enters normal document flow. No sticky or pinned scroll. Only one queued frame per scroll; scroll listeners detach when the hero is offscreen.
+Desktop/tablet: portrait scales by at most 3.5% and moves 18px; headline moves up at most 24px; dark hero scales down proportionally by at most 1.4% as the dark personal introduction enters normal document flow. No sticky or pinned scroll. Only one queued frame per scroll; scroll listeners detach when the hero is offscreen.
 
-At 700px and below: no portrait or section transformation, only up to 6px of text translation and 6% fade. Reduced-motion disables all scroll transforms, section reveals, hover transforms and smooth scrolling, including when the preference changes during a visit. Three chosen text blocks reveal on entry; content remains visible without JavaScript.
+At 700px and below: no portrait or section transformation, only up to 6px of text translation and 6% fade. Reduced-motion disables all scroll transforms, section reveals, hover transforms and smooth scrolling, including when the preference changes during a visit. Two chosen text blocks and a full-width stage photograph reveal on entry; content remains visible without JavaScript.
 
 ## Mobile booking form fix
 
@@ -49,3 +49,9 @@ The form uses POST, JSON Accept header, required/email validation, loading/succe
 Newsletter integration structure remains intact and visibly disabled until configured. Use an approved MailerLite embed or a secure server adapter; never expose a private API key. Empty experience/community collections remain hidden until verified material is supplied. Set creatorUrl when ONYX Creatrix's approved URL is available.
 
 The September 2026 flyer is explicitly past-event collateral. The primary event display is the recurring schedule; no old date is presented as upcoming. Future event details belong in content.js.
+
+## September 2026 narrative refinement
+
+Replaced repeated slogan sections with a personal introduction, first-person story, full-width stage photograph, four-row work index and expanded community advocacy section. Workshops now lives in the work index; speaking, Chocolate City and private conversations retain direct anchors. Newsreader regular is self-hosted (109 KB) with font-display:swap and its SIL Open Font License in public/assets/fonts/OFL.txt; body text uses Arial/Helvetica. Font source: https://github.com/productiontype/Newsreader.
+
+Browser geometry checks passed at 320, 360, 375, 390, 430, 768, 1024 and 1440px: no horizontal overflow, intersecting form labels or controls outside the viewport. Ivory section height ranges from approximately 13% desktop to 16% narrow mobile; remaining backgrounds are black/charcoal with sparse gold details. Existing Formspree handler and recipient settings were not changed.
