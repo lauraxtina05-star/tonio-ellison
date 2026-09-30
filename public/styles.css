@@ -178,7 +178,7 @@ form .button { margin-top: 25px; max-width: 100%; }
 .about-heading h2 { font: 1rem/1.6 Arial, sans-serif; letter-spacing: 0; }
 .formal-name { max-width: 210px; line-height: 1.7; }
 .reading .lead { font-size: 2.1rem; }
-.photo-break { height: clamp(460px, 55vw, 730px); overflow: hidden; background: #141414; }
+.photo-break { aspect-ratio: 1672 / 941; overflow: hidden; background: #141414; }
 .photo-break img { width: 100%; height: 100%; object-position: center top; }
 .work-list { background: var(--ivory); color: #20201d; padding-block: 95px 110px; }
 .work-list > h2 { font: 1rem/1.5 Arial, sans-serif; letter-spacing: 0; margin-bottom: 45px; }
@@ -326,8 +326,8 @@ form .button { margin-top: 25px; max-width: 100%; }
   .about-heading h2 { font-size: 1rem; }
   .formal-name { margin-top: 8px; max-width: none; }
   .reading .lead { font-size: 1.8rem; }
-  .photo-break { height: 490px; }
-  .photo-break img { object-position: 45% top; }
+  .photo-break { aspect-ratio: 1 / 1; }
+  .photo-break img { object-position: left center; }
   .work-list { padding-block: 65px; }
   .work-list > h2 { margin-bottom: 28px; }
   .work-row { grid-template-columns: 23px minmax(0, 1fr) 22px; gap: 12px; padding-block: 25px; }
@@ -352,4 +352,10 @@ form .button { margin-top: 25px; max-width: 100%; }
   :root { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; animation: none !important; }
   .hero .hero-surface, .hero .hero-image img, .hero h1, .hero .hero-copy, [data-reveal], .flyer img, .arrow-icon { transform: none !important; opacity: 1 !important; }
+}
+
+/* Professional identity is readable context, not another promotional headline. */
+.professional-identity { max-width: 560px; font-size: .9375rem; line-height: 1.65; color: #c9c5bc; margin: -12px 0 27px; }
+@media (max-width: 700px) {
+  .professional-identity { font-size: .875rem; margin-top: -9px; margin-bottom: 25px; }
 }
