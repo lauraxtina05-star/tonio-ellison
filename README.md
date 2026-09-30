@@ -1,39 +1,51 @@
 # Antonio “Tonio” Ellison, MS, CLC
 
-Dark editorial personal-brand V1. Dependency-free HTML, CSS and JavaScript; prepared for Cloudflare Pages.
+Photography-led editorial website with near-black, warm ivory and soft-white sections. Plain HTML, CSS and JavaScript; no runtime dependencies or animation libraries.
 
-## Local development and build
-- `npm run dev`: serve public/ on localhost:4173.
-- `npm run check`: JavaScript syntax checks.
-- `npm run build`: copy public/ into clean dist/.
+Live site: https://tonio-ellison.aellison2920.workers.dev/
+Repository: https://github.com/lauraxtina05-star/tonio-ellison
 
-## Files
-- public/index.html — semantic page sections, contact form, accessible navigation, SEO metadata.
-- public/styles.css — responsive design and form styling.
-- public/content.js — centralized event information and integration settings.
-- public/app.js — menu, content rendering, inquiry preselection and form request states.
-- public/assets/ — three supplied photographs/flyer and lettermark favicon.
-- public/robots.txt, public/sitemap.xml — production indexing for tonioellison.com.
-- scripts/build.mjs — zero-dependency production build.
+## Develop and deploy
+
+- `npm run dev` serves source from public/ on localhost:4173.
+- `npm run check` checks all JavaScript syntax.
+- `npm test` checks scroll bounds, offscreen cleanup and reduced-motion behavior.
+- `npm run build` creates dist/ and renders centralized event copy into HTML for non-JavaScript readers.
+- Cloudflare's connected main branch runs `npx wrangler deploy`. The checked-in wrangler.jsonc invokes the production build and publishes dist/ as static assets to the existing tonio-ellison Worker.
+- No secrets, environment variables, DNS edits or custom-domain changes are needed for this revision.
+
+## Editing map
+
+- public/index.html: page structure, natural biography, booking fields, contact links, inline reusable ArrowIcon symbol.
+- public/styles.css: editorial layout, theme, responsive forms and motion/reduced-motion styles.
+- public/content.js: the only source for Chocolate City Talks recurrence, description, registration link and integration settings.
+- public/app.js: navigation, content rendering, inquiry preselection and form requests.
+- public/motion.js: scoped IntersectionObservers and requestAnimationFrame hero updates.
+- public/assets/: original supplied portrait, stage photo and event flyer.
+- scripts/build.mjs: dependency-free static build.
+- tests/motion.test.mjs: reduced-motion and scroll lifecycle checks.
+- wrangler.jsonc: existing Cloudflare Worker deployment configuration.
+
+## Hero motion
+
+Desktop/tablet: portrait scales by at most 3.5% and moves 18px; headline moves up at most 24px; dark hero narrows by at most 1.4% as the ivory section enters normal document flow. No sticky or pinned scroll. Only one queued frame per scroll; scroll listeners detach when the hero is offscreen.
+
+At 700px and below: no portrait or section transformation, only up to 6px of text translation and 6% fade. Reduced-motion disables all scroll transforms, section reveals, hover transforms and smooth scrolling, including when the preference changes during a visit. Three chosen text blocks reveal on entry; content remains visible without JavaScript.
+
+## Mobile booking form fix
+
+The previous max-width:600px rule overrode the tablet's single-column grid with two columns. Combined with implicit minimum grid-track sizing and native select/date control widths, this caused overlap on narrow viewports. The fix uses minmax(0,1fr) tracks, min-width:0 on controls and grid children, width/max-width:100%, and one column below 700px. Controls use 16px text and at least 48px height.
+
+Manually inspected the full form at 320, 360, 375, 390 and 430px. Labels, selects, date input, textarea and submit button fit without overlapping or horizontal scrolling.
 
 ## Formspree
-Endpoint: https://formspree.io/f/xwlpzole. Uses POST, JSON Accept header, HTML validation, loading/success/error states and `_gotcha` spam honeypot. No private keys are required. The form also supports regular POST without JavaScript.
 
-On September 30, the existing workflow notified aellison2920@gmail.com. Added releasewithtonio@gmail.com as a linked email; verification is pending. After verification, select that address under Inquiry Form → Workflow → Email → Settings. Verify inbox delivery with a clearly labeled test inquiry.
+Endpoint: https://formspree.io/f/xwlpzole. Preserve notification recipient **aellison2920@gmail.com**. Do not switch it to the public business address. Public contact email stays releasewithtonio@gmail.com.
 
-## MailerLite
-The supplied logged-in dashboard currently fails to render (axios is not defined). Signup remains disabled with an honest notice. Create/select “Tonio Website Community,” create an embedded form with first name and email, then replace the newsletter form with the approved MailerLite embed and test confirmation/group membership. Never paste private API credentials into frontend code. The current generic newsletterEndpoint setting is for a secure JSON adapter only, not a MailerLite API key or arbitrary embed action.
+The form uses POST, JSON Accept header, required/email validation, loading/success/error states and the `_gotcha` honeypot. No private keys. Native POST remains available without JavaScript. The earlier labeled integration test was received in Formspree Inbox. This visual revision preserves the request handler and endpoint.
 
-## Cloudflare Pages
-Connect GitHub repository lauraxtina05-star/tonio-ellison. Production branch: main. Framework: None. Build command: npm run build. Output directory: dist. Root directory: repository root. No environment variables or secrets are required.
+## MailerLite and future content
 
-The existing account requires GitHub identity verification/installation access before the Git-connected Pages setup can continue. Grant only this repository. After deployment, open Pages → Custom domains → Set up a custom domain → tonioellison.com. Review DNS changes and preserve unrelated records. Do not point the domain at the older private Sites preview.
+Newsletter integration structure remains intact and visibly disabled until configured. Use an approved MailerLite embed or a secure server adapter; never expose a private API key. Empty experience/community collections remain hidden until verified material is supplied. Set creatorUrl when ONYX Creatrix's approved URL is available.
 
-## Content maintenance
-The supplied September 24, 2026 gathering is now historical, so it is labeled “Featured gathering,” not “next.” Update date/time centrally in content.js when a new event is confirmed. Tonio is the recurring host/emcee; no ownership claims are made. No invented endorsements or clinical credentials. Empty communityHighlights/experience collections are hidden until verified material is supplied. Add the ONYX Creatrix URL to creatorUrl when confirmed.
-
-## Phase two
-Complete MailerLite and notification routing; add approved media/partnerships, analytics with appropriate consent, a downloadable speaker bio, and event updates.
-
-## Verified September 30, 2026
-Production build and JavaScript checks pass. Mobile 390px, tablet 768px and desktop 1440px have no horizontal overflow; all images load. Internal anchors and local assets resolve. Contact email/phone/social targets match the supplied links. Required-field validation blocks empty submission. A clearly labeled TEST ONLY inquiry was successfully accepted and appears in Formspree Inbox; frontend success resets the form. Inbox notification delivery remains unverified. Provider-error handling is implemented but not live outage-tested. MailerLite signup is disabled and not tested because its dashboard fails to render. Cloudflare Pages deployment awaits GitHub identity/connection verification.
+The September 2026 flyer is explicitly past-event collateral. The primary event display is the recurring schedule; no old date is presented as upcoming. Future event details belong in content.js.
