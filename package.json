@@ -1,0 +1,1 @@
+{"name":"tonio-ellison","private":true,"version":"1.0.0","scripts":{"build":"node scripts/build.mjs","check":"node --check public/app.js && node --check public/content.js","dev":"python3 -m http.server 4173 --directory public"}}
