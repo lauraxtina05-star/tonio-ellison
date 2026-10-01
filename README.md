@@ -46,9 +46,9 @@ The form uses POST, JSON Accept header, required/email validation, loading/succe
 
 ## MailerLite and future content
 
-Newsletter integration structure remains intact and visibly disabled until configured. Use an approved MailerLite embed or a secure server adapter; never expose a private API key. Empty experience/community collections remain hidden until verified material is supplied. Set creatorUrl when ONYX Creatrix's approved URL is available.
+Universal account 2654388 loads once globally; the live embed WQVle6 owns subscription validation, submission and success state. Styling is limited to the site shell and scoped semantic MailerLite classes. No API keys or replacement submission handler. Empty experience/community collections remain hidden until verified material is supplied.
 
-The September 2026 flyer is explicitly past-event collateral. The primary event display is the recurring schedule; no old date is presented as upcoming. Future event details belong in content.js.
+Event details are centralized in content.js and pre-rendered by the build. The historical flyer has been removed from the public assets and page.
 
 ## September 2026 narrative refinement
 
@@ -59,3 +59,9 @@ Browser geometry checks passed at 320, 360, 375, 390, 430, 768, 1024 and 1440px:
 ## Wide portrait and professional identity update
 
 The supplied Antonio.png appears as public/assets/tonio-speaking-wide.png after About, before the work index. Desktop and tablet preserve its full 1672:941 composition. Mobile uses a left-aligned square crop that retains Tonio and his microphone, with no text overlay. The hero identifies his life-coach, speaker, host, activist and facilitator roles; community and private-conversation copy expands the relevant work without medical claims. Formal MS, CLC credentials remain in About rather than repeating in contact/footer. Existing contact details, Formspree, event schedule and motion are preserved.
+
+## October signup and event refinement
+
+Branded rectangular charcoal signup panel, warm ivory CTA, readable 16px inputs, and a muted gold rule. Only the duplicate promotional copy inside the embed is hidden; fields, validation and success messages remain owned by MailerLite. The automatic popup was disabled with user authorization in MailerLite. Button text is configured in the actual MailerLite form, not replaced with JavaScript.
+
+Copy cleanup removes repeated “Sometimes” constructions. Chocolate City now shows the recurring schedule, 7 PM doors / 8 PM program, venue address and partner/venue notes. Formspree endpoint and recipient remain unchanged; no DNS changes.

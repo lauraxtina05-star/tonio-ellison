@@ -13,7 +13,7 @@ const escapeHTML = value => String(value).replace(/[&<>"']/g, character => ({
   '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;',
 }[character]));
 let html = await readFile('dist/index.html', 'utf8');
-html = html.replace(/(<p[^>]*data-event="(schedule|description)"[^>]*>)[\s\S]*?(<\/p>)/g,
+html = html.replace(/(<p[^>]*data-event="([a-zA-Z]+)"[^>]*>)[\s\S]*?(<\/p>)/g,
   (_, opening, field, closing) => `${opening}${escapeHTML(event[field])}${closing}`);
 html = html.replace('data-event-link>', `data-event-link href="${escapeHTML(event.url)}">`);
 await writeFile('dist/index.html', html);

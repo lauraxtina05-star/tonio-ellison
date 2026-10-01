@@ -208,11 +208,10 @@ form .button { margin-top: 25px; max-width: 100%; }
 .private h2 { max-width: 830px; font-size: clamp(2.8rem, 4.8vw, 4.8rem); }
 .private > div { display: block; max-width: 530px; margin: 40px 0 0 auto; }
 .contact { background: var(--charcoal); }
-.newsletter { background: var(--ivory); color: #20201d; border-bottom: 1px solid #c8c3b8; }
-.newsletter p, .newsletter .availability { color: #59554e; }
-.newsletter label { color: #20201d; }
-.newsletter input { background: #faf8f4; color: #20201d; color-scheme: light; }
-.newsletter .button { color: #20201d; }
+.newsletter { background: var(--charcoal); color: var(--white); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); align-items: start; }
+.newsletter > div > p { color: #bcb9b2; }
+.newsletter-embed { min-width: 0; width: 100%; min-height: 390px; border-top: 2px solid var(--gold); padding-top: 22px; }
+.newsletter .ml-embedded { width: 100%; min-width: 0; }
 @media (max-width: 1200px) {
   .header { padding-inline: 5vw; gap: 20px; }
   .header nav { gap: 15px; }
@@ -359,3 +358,25 @@ form .button { margin-top: 25px; max-width: 100%; }
 @media (max-width: 700px) {
   .professional-identity { font-size: .875rem; margin-top: -9px; margin-bottom: 25px; }
 }
+
+/* The shell is site-owned; cosmetic embed overrides leave MailerLite's states and handlers intact. */
+.newsletter.section { display: block; background: #080808; }
+.newsletter .signup-window { max-width: 1180px; margin-inline: auto; border: 1px solid #393834; border-top: 2px solid #b59a61; background: #141414; padding: clamp(24px, 4vw, 64px); display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 7%; }
+.signup-intro { padding-top: 12px; }
+.signup-intro p { max-width: 440px; }
+.newsletter-embed { border: 0; padding: 0; min-height: 250px; }
+#stay-connected .ml-form-embedWrapper { background: transparent !important; border-radius: 0 !important; width: 100% !important; max-width: 100% !important; }
+#stay-connected .ml-form-embedBody, #stay-connected .ml-form-successBody { padding: 12px 0 0 !important; }
+#stay-connected .ml-form-embedContent { display: none; }
+#stay-connected .ml-form-successContent h4 { color: #f4f0e8 !important; font-family: Newsreader, serif !important; font-size: 2.3rem !important; }
+#stay-connected .ml-form-successContent p, #stay-connected .ml-field-group label { color: #f4f0e8 !important; }
+#stay-connected .ml-embedded .ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input { background: #1b1b1b !important; color: #f4f0e8 !important; border-radius: 0 !important; font-family: Arial, sans-serif !important; font-size: 16px !important; min-height: 52px; }
+#stay-connected .ml-embedded .ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input::placeholder { color: #c9c5bc !important; opacity: 1; }
+#stay-connected .ml-embedded .ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button { background: #f4f0e8 !important; color: #080808 !important; border-radius: 0 !important; font-family: Arial, sans-serif !important; min-height: 52px; }
+#stay-connected .ml-embedded .ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button:hover { background: #ddd5c7 !important; }
+.event-times { color: #f4f0e8; font-size: 1.35rem; line-height: 1.5; }
+.venue-name { font-family: Newsreader, serif; font-size: 2rem; color: #f4f0e8; margin-bottom: 8px; }
+.venue-note, .event-partners { font-size: .9375rem; }
+.event-details { border-top: 1px solid #b59a61; padding-top: 25px; min-width: 0; }
+@media(max-width: 960px) { .newsletter .signup-window { grid-template-columns: minmax(0, 1fr); gap: 28px; } }
+@media(max-width: 700px) { .newsletter.section { padding-inline: 16px; } .newsletter .signup-window { padding: 26px 20px; } .newsletter h2 { font-size: 2.5rem; } .newsletter-embed { min-height: 250px; } }

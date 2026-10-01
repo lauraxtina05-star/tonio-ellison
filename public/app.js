@@ -18,7 +18,7 @@ function connectForm(id, endpoint, noteId, readyNote, success) {
  });
 }
 connectForm('booking-form',content.integrations.bookingEndpoint,'booking-note','Share a little about your event or opportunity.','Thank you. Your inquiry has been received.');
-connectForm('newsletter-form',content.integrations.newsletterEndpoint,'newsletter-note','By signing up, you agree to receive updates from Tonio. You can unsubscribe at any time.','You’re on the list. Thank you for staying connected.');
+// MailerLite owns embedded signup validation, submission and success state.
 if(content.integrations.creatorUrl){const a=document.createElement('a');a.href=content.integrations.creatorUrl;a.textContent='ONYX Creatrix';document.querySelector('#creator').replaceChildren(a);}
 for(const [key,id] of [['communityHighlights','community-highlights'],['experience','experience']]){if(!content[key].length)continue;const root=document.getElementById(id);root.hidden=false;const h=document.createElement('h3');h.textContent=key==='experience'?'As seen / heard / in the room':'Community in action';root.append(h);content[key].forEach(item=>{const article=document.createElement('article');const heading=document.createElement('h4');heading.textContent=item.title;const p=document.createElement('p');p.textContent=item.description;article.append(heading,p);root.append(article);});}
 document.getElementById('year').textContent=new Date().getFullYear();
